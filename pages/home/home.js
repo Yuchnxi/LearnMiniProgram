@@ -5,62 +5,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name: 'ycx',
+    students: [
+      {id: 110, name: 'zhangsan', age: 30},
+      {id: 120, name: 'lisi', age: 28},
+      {id: 130, name: 'wangwu', age: 22}
+    ],
+    counter: 0,
+    list: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleBtnClick() {
+    // tihs.setDate()
+    this.setData({
+      counter: this.data.counter + 1
+    })
+    
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleSubtraction() {
+    this.setData({
+      counter: this.data.counter - 1
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleGetUserInfo(event) {
+    console.log(event)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 页面被加载出来
+  onLoad() {
+    wx.request({
+      url: 'http://152.136.185.210:8000/api/n3/recommend',
+      success: (res) => {
+        console.log(res)
+        const data = res.data.data.list
+        this.setData({
+          list: data
+        })
+      }
+    })
   }
-})
+}) 
