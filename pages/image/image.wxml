@@ -1,0 +1,24 @@
+<!--pages/image/image.wxml-->
+<!-- 
+  重点：
+    1.image 组件可以写成单标签，也可以修改双标签
+    2.image 组件默认有自己的大小： 320 * 240 
+    3.image 组件时一个行内块级元素（inline-block）
+ -->
+ <!-- <image/> -->
+
+ <!-- 2.scr：本地路径/远程地址 -->
+ <image src="/assets/1.jpg"/>
+ <image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
+
+ <!-- 补充： 相册中的图片 -->
+ <button bindtap="handleChooseAlbum">选中图片</button>
+ <image src="{{imagePath}}"></image>
+
+ <!-- 3.bindload: 监听图片加载完成 -->
+ <!-- lazy-load: 图片懒加载 -->
+ <image wx:for="{{10}}" wx:key="item"
+        src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+        bindload="handleImageLoad"
+        mode="widthFix"
+        lazy-load/>

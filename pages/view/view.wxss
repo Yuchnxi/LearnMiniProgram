@@ -1,0 +1,12 @@
+/* pages/view/view.wxss */
+.box1 {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background-color: pink;
+}
+
+.hover-box1 {
+  background-color: purple;
+}

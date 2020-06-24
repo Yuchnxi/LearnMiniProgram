@@ -1,0 +1,29 @@
+/* pages/scroll/scroll.wxss */
+.container1 {
+  background-color: pink;
+  white-space: nowrap;
+}
+
+.item1 {
+  width: 100px;
+  height: 100px;
+  background-color: rebeccapurple;
+  margin: 10px;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+}
+
+.container2 {
+  background-color: #ff6b81;
+  height: 200px;
+  margin-top: 20px;
+}
+
+.item2 {
+  height: 100px;
+  background-color: #eccc68;
+  margin: 10px;
+  text-align: center;
+  line-height: 100px;
+}

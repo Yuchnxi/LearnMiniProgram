@@ -1,0 +1,6 @@
+<!--pages/view/view.wxml-->
+<!-- 1.基本使用 -->
+<view>哈哈</view>
+
+<!-- 2.hover-class: 指定按下去的样式类 -->
+<view class="box1" hover-class="hover-box1">box1</view>
