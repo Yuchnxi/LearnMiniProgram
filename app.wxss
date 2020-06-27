@@ -1,0 +1,4 @@
+.container {
+  color: gold;
+  font-size: 32px;
+}

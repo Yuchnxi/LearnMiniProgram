@@ -1,0 +1,42 @@
+<!--pages/wxml/wxml.wxml-->
+<view>{{nowTime}}</view>
+
+<button size="mini" bindtap="handleSwitchColr">切换颜色</button>
+<view class='box {{isActive ? "active" : ""}}'>哈哈哈</view>
+
+<view>----=条件判断-----</view>
+<!-- wx:if 的使用 -->
+<button size="mini" bindtap="handleSwitchShow">显示隐藏字</button>
+<view wx:if='{{isShow}}'>嘻嘻嘻</view>
+
+<!-- wx:elif/wx:else -->
+<button size="mini" bindtap="handleIncrement">分数递增（+6）</button>
+<view>当前分数: {{score}}</view>
+<view wx:if='{{score >= 90}}'>优秀</view>
+<view wx:elif='{{score >= 80}}'>良好</view>
+<view wx:elif='{{score >= 60}}'>及格</view>
+<view wx:else>不及格</view>
+
+<!-- hidden 属性 -->
+<view hidden="{{false}}">我是hidden属性控制的内容</view>
+
+<view>---------------列表渲染----------------</view>
+<!-- wx:for -->
+<!-- 遍历数组/字符串/数字 -->
+<view wx:for="{{['abc', 'wsx', 'nba']}}" wx:key="index">{{item}} {{index}}</view>
+
+<!-- item、index 起名字 -->
+<view>------------item、index 起名字---------------</view>
+<view wx:for="{{movies}}" wx:for-item="movies" wx:key="index">{{movies}}</view>
+
+<view>------------------ template -------------------</view>
+<!-- 
+  之前的时候小程序不支持自定义组件，为了进行代码的复用： template
+ -->
+<!-- <template name="contentItem">
+  <button size="mini">{{btnText}}</button>
+  <view>{{content}}</view>
+</template> -->
+
+<import src="/wxml/template.wxml"/>
+<template is="contentItem" data="{{btnText: '按钮', content: '666'}}"/>
