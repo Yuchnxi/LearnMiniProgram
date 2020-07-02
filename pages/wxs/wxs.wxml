@@ -1,0 +1,30 @@
+<!--pages/wxs/wxs.wxml-->
+<!-- wxs的定义方式 -->
+<!-- 直接定义方式 -->
+<!-- <wxs module="info">
+  // js代码
+  var message = "Hello Wold"
+  var name = "yucx"
+
+  var sum = function(num1, num2) {
+    return num1 + num2
+  }
+
+  module.exports = {
+    message: message,
+    name: name,
+    sum: sum
+  }
+</wxs> -->
+
+<!-- 定义在单独的 wxs 文件中，再使用 <wxs> 标签进行导入 -->
+<wxs src="../../wxs/info.wxs" module="info" />
+
+<view>{{info.message}}</view>
+<view>{{info.sum(20, 30)}}</view>
+
+<!-- wxs 的应用 -->
+<wxs src="../../wxs/fomat.wxs" module="format"></wxs>
+
+<view>{{format.priceFormat(price)}}</view>
+<view>{{format.dateFormat(time)}}</view>
