@@ -1,4 +1,6 @@
 // pages/home/home.js
+import request from '../../service/network'
+
 Page({
 
   /**
@@ -12,7 +14,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // ------------ 1.原生的方式发送网络请求 --------
+    // 发送网络请求
+    // wx.request({
+    //   url: 'http://152.136.185.210:8000/api/n3/recommend',
+    //   success: function(res) {
+    //     console.log(res)
+    //   }
+    // })
 
+    // ------------ 2. 使用封装的 request 发送网络请求 -------
+    request({
+      url: 'http://152.136.185.210:8000/api/n3/recommend',
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
 
   /**
