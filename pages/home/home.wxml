@@ -1,3 +1,21 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello World</text>
 <button size="mini">点击</button>
+
+<!-- 1.navigator 页面跳转 -->
+<navigator url="/pages/detail/detail">跳转到详情页</navigator>
+
+<!-- 2.navigator 属性：open-type -->
+<navigator url="/pages/detail/detail"
+            open-type="redirect">
+  跳转到详情页(redirect)
+</navigator>
+<navigator url="/pages/about/about"
+            open-type="switchTab">
+  跳转到关于(switchTab)
+</navigator>
+
+<!-- 3. 跳转过程中数据的传递 -->
+<navigator url="/pages/detail/detail?name=ycx&age=18&height=1.70">跳转到详情页</navigator>
+
+<button size="mini" bindtap="handlePushDetail">跳转</button>
